@@ -12,9 +12,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registry.addEndpoint("/ws").withSockJS();
     }
     @Override
-    public void configureMessageBroker(MessageBrokerRegistry registry) {
+     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.setApplicationDestinationPrefixes("/app");
-        registry.enableSimpleBroker("/topic");
+        // Use this for enabling a Full featured broker like RabbitMQ
+        registry.enableStompBrokerRelay("/topic")
+                .setRelayHost("localhost")
+                .setRelayPort(61613)
+                .setClientLogin("guest")
+                .setClientPasscode("guest");
     }
 }
 // В примере у нас используется встроенный брокер, но можно использовать и полноценный брокер,
