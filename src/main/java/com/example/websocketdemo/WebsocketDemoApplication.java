@@ -1,13 +1,12 @@
-package io.github.eugenezakhno.MyWebSocket;
+package com.example.websocketdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyWebSocketApplication {
+public class WebsocketDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyWebSocketApplication.class, args);
+		SpringApplication.run(WebsocketDemoApplication.class, args);
 	}
-
 }
